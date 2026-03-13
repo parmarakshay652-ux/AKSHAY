@@ -1,0 +1,30 @@
+RewriteEngine On
+
+# Remove .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.*)$ $1.php [L]
+
+# Clean URLs for vendors
+RewriteRule ^vendor/([^/]+)$ pages/vendor-details.php?slug=$1 [L]
+
+# Clean URLs for blog
+RewriteRule ^blog/([^/]+)$ pages/blog-details.php?slug=$1 [L]
+
+# Clean URLs for pages
+RewriteRule ^vendors$ pages/vendors.php [L]
+RewriteRule ^real-weddings$ pages/real-weddings.php [L]
+RewriteRule ^gallery$ pages/gallery.php [L]
+RewriteRule ^blog$ pages/blog.php [L]
+RewriteRule ^about$ pages/about.php [L]
+RewriteRule ^contact$ pages/contact.php [L]
+
+# Admin routes
+RewriteRule ^admin$ admin/dashboard.php [L]
+RewriteRule ^admin/login$ admin/login.php [L]
+RewriteRule ^admin/add-vendor$ admin/add-vendor.php [L]
+RewriteRule ^admin/edit-vendor/([^/]+)$ admin/edit-vendor.php?id=$1 [L]
+RewriteRule ^admin/manage-vendors$ admin/manage-vendors.php [L]
+RewriteRule ^admin/add-blog$ admin/add-blog.php [L]
+RewriteRule ^admin/manage-blog$ admin/manage-blog.php [L]
+RewriteRule ^admin/manage-gallery$ admin/manage-gallery.php [L]
