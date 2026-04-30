@@ -1,6 +1,16 @@
 <?php include 'includes/header.php'; ?>
 <?php include 'includes/navbar.php'; ?>
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5Y7MK2PBB9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'G-5Y7MK2PBB9');
+</script>
+    </head>
 <section class="hero">
     <div class="hero-content">
         <h1>Plan Your Dream Wedding</h1>
